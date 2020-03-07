@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+    <h1 class="cover-heading">Crypto Wallet Generator</h1>
+    <p class="lead">You can create Crypto wallet by clicking a button simply. Also you can get private key by inputting your wallet address.</p>
+    <p class="lead">
+        <a href="{% url 'core:ethereum_view' %}" class="btn btn-lg btn-default">Get Started</a>
+    </p>
+{% endblock %}
+
+{% block javascript %}
+    
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block style %}
+    {% endblock style %}
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Crypto Wallet Generator</h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                <li class="{{ home_view }}"><a class="nav-link" href="{%  url 'core:home_view' %}">Home</a></li>
+                                <li class="{{ bitcoin_view }}"><a class="nav-link"
+                                        href="{% url 'core:bitcoin_view' %}">Bitcoin</a></li>
+                                <li class="{{ ethereum_view }}"><a class="nav-link"
+                                        href="{% url 'core:ethereum_view' %}">Etheruem</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Created By Ivan</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% block javascript %}
+    {% endblock javascript %}
+</body>
+
+</html>
